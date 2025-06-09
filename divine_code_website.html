@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DivineCode - AI Spiritual Companion</title>
+    <meta name="description" content="Revolutionary AI-powered spiritual companion combining Palm Reading, Astrology, Numerology, and Vastu Shastra">
+    <meta name="keywords" content="AI astrology, palm reading, numerology, vastu shastra, spiritual guidance">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1b4b 0%, #581c87 25%, #0f172a 50%, #312e81 75%, #1e1b4b 100%);
+            background-size: 400% 400%;
+            animation: cosmicShift 20s ease infinite;
+            min-height: 100vh;
+        }
+        
+        @keyframes cosmicShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pulse-effect {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .floating-star {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .voice-wave {
+            background: linear-gradient(to top, #6366f1, #a855f7);
+            animation: wave 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 25px; }
+        }
+        
+        .scan-overlay {
+            background: linear-gradient(to bottom, transparent 0%, rgba(99, 102, 241, 0.3) 50%, transparent 100%);
+            animation: scan 2s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 90%; }
+        }
+        
+        .notification-badge {
+            background: linear-gradient(135deg, #ec4899, #ef4444);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-3px); }
+            60% { transform: translateY(-2px); }
+        }
+        
+        .nav-active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3));
+            color: white !important;
+        }
+        
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .main-content {
+            position: relative;
+            z-index: 10;
+            max-width: 400px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .show {
+            display: block !important;
+        }
+        
+        .show-flex {
+            display: flex !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic Background -->
+    <div class="cosmic-bg">
+        <div style="position: absolute; top: 10%; right: 10%; width: 120px; height: 120px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%); border-radius: 50%; animation: pulse 4s infinite;"></div>
+        <div style="position: absolute; bottom: 20%; left: 10%; width: 160px; height: 160px; background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%); border-radius: 50%; animation: pulse 4s infinite 1s;"></div>
+        <div style="position: absolute; top: 50%; right: 15%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%); border-radius: 50%; animation: pulse 4s infinite 2s;"></div>
+        
+        <!-- Floating Stars -->
+        <div class="floating-star" style="position: absolute; top: 8%; left: 15%; font-size: 20px; color: rgba(199, 210, 254, 0.6);">✨</div>
+        <div class="floating-star" style="position: absolute; top: 25%; right: 25%; font-size: 16px; color: rgba(196, 181, 253, 0.6); animation-delay: 1s;">⭐</div>
+        <div class="floating-star" style="position: absolute; bottom: 30%; left: 20%; font-size: 18px; color: rgba(251, 207, 232, 0.6); animation-delay: 2s;">✨</div>
+        <div class="floating-star" style="position: absolute; bottom: 15%; right: 8%; font-size: 14px; color: rgba(153, 246, 228, 0.6); animation-delay: 1.5s;">⭐</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header style="padding: 24px 24px 16px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="position: relative;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #a855f7); display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                            ✨
+                        </div>
+                        <div style="position: absolute; top: -4px; right: -4px; width: 12px; height: 12px; background: #4ade80; border-radius: 50%; border: 2px solid #0f172a;"></div>
+                    </div>
+                    <div>
+                        <h1 class="gradient-text" style="font-size: 20px; font-weight: 700; margin: 0;">DivineCode</h1>
+                        <p style="font-size: 12px; color: #c7d2fe; margin: 0;">AI Spiritual Companion</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="position: relative; cursor: pointer;" onclick="showNotifications()">
+                        <svg width="24" height="24" fill="none" stroke="#c7d2fe" viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <div class="notification-badge" style="position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: white; font-weight: 700;" id="notifBadge">3</div>
+                    </div>
+                    <svg width="24" height="24" fill="none" stroke="#c7d2fe" viewBox="0 0 24 24" stroke-width="2" style="cursor: pointer;" onclick="showLanguages()">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="glass-card" style="border-radius: 16px; padding: 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <p style="color: white; font-weight: 600; margin: 0;">Today's Divine Energy</p>
+                        <p style="color: #c7d2fe; font-size: 14px; margin: 4px 0 0;">Jupiter Ascending • Lucky Day</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <svg width="16" height="16" fill="#facc15" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <span style="color: white; font-family: monospace; font-size: 14px;" id="currentTime"></span>
+                        </div>
+                        <p style="color: #c7d2fe; font-size: 12px; margin: 4px 0 0;">Auspicious till 6:30 PM</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Daily Insights -->
+        <section style="padding: 0 24px; margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h2 style="color: white; font-size: 18px; font-weight: 600; margin: 0;">Today's Insights</h2>
+                <svg width="20" height="20" fill="none" stroke="#c7d2fe" viewBox="0 0 24 24" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="glass-card" style="border-radius: 12px; padding: 16px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <svg width="16" height="16" fill="#f472b6" viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Lucky Color</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #34d399, #14b8a6);"></div>
+                        <span style="color: #c7d2fe; font-size: 14px;">Emerald Green</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="border-radius: 12px; padding: 16px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <svg width="16" height="16" fill="#facc15" viewBox="0 0 24 24">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Lucky Number</span>
+                    </div>
+                    <div style="font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #facc15, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        7
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card" style="border-radius: 12px; padding: 16px; margin-top: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" fill="#6366f1" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span style="color: white; font-size: 14px; font-weight: 500;">Daily Affirmation</span>
+                </div>
+                <p style="color: #c7d2fe; font-size: 14px; font-style: italic; margin: 0;">
+                    "I am aligned with the universe's abundance and attract prosperity in all forms."
+                </p>
+            </div>
+        </section>
+
+        <!-- AI Features -->
+        <section style="padding: 0 24px; margin-bottom: 24px;">
+            <h2 style="color: white; font-size: 18px; font-weight: 600; margin: 0 0 16px;">AI-Powered Readings</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                <div class="glass-card feature-card" style="border-radius: 12px; padding: 16px;" onclick="togglePalmScan()">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <div style="position: relative;">
+                            <svg width="32" height="32" fill="none" stroke="#6366f1" viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                            </svg>
+                            <div class="pulse-effect hidden" id="palmPulse" style="position: absolute; top: -4px; right: -4px; width: 8px; height: 8px; background: #6366f1; border-radius: 50%;"></div>
+                        </div>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Palm Scan</span>
+                        <span style="color: #c7d2fe; font-size: 12px;">AI Analysis</span>
+                    </div>
+                </div>
+
+                <div class="glass-card feature-card" style="border-radius: 12px; padding: 16px;" onclick="showBirthChart()">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <svg width="32" height="32" fill="none" stroke="#a855f7" viewBox="0 0 24 24" stroke-width="2">
+                            <polygon points="12,2 15.09,8.26 22,9 17,14.74 18.18,21.02 12,17.77 5.82,21.02 7,14.74 2,9 8.91,8.26 12,2"></polygon>
+                        </svg>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Birth Chart</span>
+                        <span style="color: #c7d2fe; font-size: 12px;">Vedic + Western</span>
+                    </div>
+                </div>
+
+                <div class="glass-card feature-card" style="border-radius: 12px; padding: 16px;" onclick="showNumerology()">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <svg width="32" height="32" fill="none" stroke="#f472b6" viewBox="0 0 24 24" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="9" x2="9" y2="15"></line>
+                            <line x1="15" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Numerology</span>
+                        <span style="color: #c7d2fe; font-size: 12px;">Name Analysis</span>
+                    </div>
+                </div>
+
+                <div class="glass-card feature-card" style="border-radius: 12px; padding: 16px;" onclick="showVastu()">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <svg width="32" height="32" fill="none" stroke="#14b8a6" viewBox="0 0 24 24" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88 16.24,7.76"></polygon>
+                        </svg>
+                        <span style="color: white; font-size: 14px; font-weight: 500;">Vastu AR</span>
+                        <span style="color: #c7d2fe; font-size: 12px;">Room Scanner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Palm Scan Interface -->
+            <div class="glass-card hidden" id="palmScanInterface" style="border-radius: 12px; padding: 16px; background: linear-gradient(135deg, #6366f1, #a855f7);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                    <div>
+                        <p style="color: white; font-weight: 600; margin: 0;">Palm Scan Active</p>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin: 4px 0 0;">Position your palm in the camera frame</p>
+                    </div>
+                </div>
+                <div style="margin-top: 12px; background: rgba(255,255,255,0.2); border-radius: 8px; height: 120px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                    <div style="width: 60px; height: 80px; border: 2px dashed rgba(255,255,255,0.6); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="32" height="32" fill="rgba(255,255,255,0.6)" viewBox="0 0 24 24">
+                            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                            <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                            <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                        </svg>
+                    </div>
+                    <div class="scan-overlay hidden" id="scanLine" style="position: absolute; width: 100%; height: 4px; top: 0%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice Assistant -->
+        <section style="padding: 0 24px; margin-bottom: 24px;">
+            <div class="glass-card" style="border-radius: 12px; padding: 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="position: relative;">
+                            <button style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.2); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;" id="voiceBtn" onclick="toggleVoice()">
+                                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                            </button>
+                            <div class="hidden" id="voiceRing" style="position: absolute; inset: -8px; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3)); animation: pulse 2s infinite;"></div>
+                        </div>
+                        <div>
+                            <p style="color: white; font-weight: 500; margin: 0;">Divine Voice Assistant</p>
+                            <p style="color: #c7d2fe; font-size: 14px; margin: 4px 0 0;" id="voiceStatus">Ask me anything spiritual</p>
+                        </div>
+                    </div>
+                    <svg width="20" height="20" fill="none" stroke="#c7d2fe" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                
+                <div class="hidden" id="voiceWaves" style="margin-top: 12px; display: flex; justify-content: center; gap: 4px;">
+                    <div class="voice-wave" style="width: 4px; border-radius: 2px;"></div>
+                    <div class="voice-wave" style="width: 4px; border-radius: 2px; animation-delay: 0.1s;"></div>
+                    <div class="voice-wave" style="width: 4px; border-radius: 2px; animation-delay: 0.2s;"></div>
+                    <div class="voice-wave" style="width: 4px; border-radius: 2px; animation-delay: 0.3s;"></div>
+                    <div class="voice-wave" style="width: 4px; border-radius: 2px; animation-delay: 0.4s;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meditation Tools -->
+        <section style="padding: 0 24px; margin-bottom: 24px;">
+            <h2 style="color: white; font-size: 18px; font-weight: 600; margin: 0 0 16px;">Personalized Wellness</h2>
+            
+            <div class="glass-card" style="border-radius: 12px; padding: 16px; margin-bottom: 12px; cursor: pointer;" onclick="showMeditation()">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #14b8a6); display: flex; align-items: center; justify-content: center;">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                <polygon points="5,3 19,12 5,21 5,3"></polygon>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="color: white; font-weight: 500; margin: 0;">Today's Meditation</p>
+                            <p style="color:
